@@ -1,13 +1,15 @@
 const { gql } =  require("apollo-server")
 
-// definição de tipos do graphql
-// a exclamação significa que o campo nao pode ser null
 const userSchema = gql`
 type User {
     nome: String!
     ativo: Boolean!
     email: String
 }
-`
 
-module.export = userSchema
+type Query {
+    users: [User]
+    primeiroUser: User
+}
+`
+module.exports = userSchema
