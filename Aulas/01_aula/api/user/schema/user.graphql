@@ -9,7 +9,6 @@ type User {
 
 type Query {
     users: [User]
-    primeiroUser: User
 }
 `
 module.exports = userSchema

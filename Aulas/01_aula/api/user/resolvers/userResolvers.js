@@ -1,21 +1,14 @@
-const arrayUsers = [
-  {
-    nome: "Ana",
-    ativo: true,
-    email: "ana@gmail.com"
-  },
-  {
-    nome: "Marcia",
-    ativo: false,
-  },
-];
 
 const useResolvers = {
     Query: {
-        users() {
-            return arrayUsers;
-        },
-        primeiroUser: () => arrayUsers[0]
+        users: (  dataSources ) => { 
+          // root trabalha com o nivel anterior
+          // args trabalha com os argumentos que foram passados
+          // dataSources trabalha com os dados que foram importados no arquivo index.js
+          // info trabalha com as informações do schema
+          dataSources.usersAPI.getUsers()
+        }
+        
     }
 };
 
