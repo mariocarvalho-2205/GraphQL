@@ -2,9 +2,9 @@
 // o modulo gql faz o javascript interpretar o que esta escrito na linguagem do GraphQL
 const { ApolloServer, gql } = require("apollo-server");
 const userSchema = require("./api/user/schema/user.graphql");
-const userResolvers = require("./api/user/resolvers/userResolvers")
+const userResolvers = require("./api/user/resolvers/userResolvers.js")
 
-const UsersAPI = require('./api/user/datasourse/user')
+const UsersAPI = require('../01_aula/api/user/datasourse/user.js')
 const typeDefs = [userSchema];
 const resolvers = [userResolvers]
 
